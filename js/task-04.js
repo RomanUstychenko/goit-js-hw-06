@@ -1,29 +1,20 @@
-const counterValue = document.querySelector('#value');
+let value = document.querySelector('#value');
+let counterValue = 0;
 const btn = document.querySelector('#counter')
-console.log(counterValue.textContent)
+console.log(btn.firstElementChild.textContent)
 
 
 
-// btn.firstElementChild.addEventListener("click", (value) => {
-//     // console.log("-1");
-//     value - 1;
-//   });
-//   btn.lastElementChild.addEventListener("click", () => {
-//     console.log("+1");
-//   });
-
-
-
-  // const button = document.querySelector(".my-button");
 
 const minus = () => {
-  counterValue.innerHTML -= 1;
-  console.log("-1");
+  counterValue += Number(btn.firstElementChild.textContent);
+  value.innerHTML = Number(counterValue);
+  console.log(counterValue)
 };
 btn.firstElementChild.addEventListener("click", minus);
 
 const plus = () => {
-  counterValue.innerHTML += 1;
-  console.log("+1");
+  counterValue += Number(btn.lastElementChild.textContent);
+  value.innerHTML = Number(counterValue);
 };
 btn.lastElementChild.addEventListener("click", plus);
