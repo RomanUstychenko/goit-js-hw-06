@@ -18,7 +18,6 @@ const gallery = document.querySelector(".gallery");
 const creatLi = (count) => {
   for (let i = 0; i < count; i += 1 ) {
     const li = document.createElement("li");
-    const img = document.createElement("img");
     li.textContent = `${i}`;
     gallery.append(li);
   }
