@@ -13,26 +13,9 @@ const images = [
   },
 ];
 
-
-const gallery = document.querySelector(".gallery");
-const creatLi = (count) => {
-  for (let i = 0; i < count; i += 1 ) {
-    const li = document.createElement("li");
-    li.textContent = `${i}`;
-    gallery.append(li);
-  }
-  
-}
-creatLi (images.length)
-
-const markup = images
-  .map((image) => `<li ><img class="image" style = "width: 500px" src="${image.url}" alt="${image.alt}"></li>`)
+const creatLi = images
+  .map((image) =>`<li><img class="image" style = "width: 500px" src="${image.url}" alt="${image.alt}"></li>`)
   .join("");
-  gallery.innerHTML = markup;
-  gallery.setAttribute("style", "list-style-type:none; display: flex")
-
-  
-  
-  
-  
-  
+const gallery = document.querySelector(".gallery");
+gallery.insertAdjacentHTML("afterbegin", creatLi); 
+gallery.setAttribute("style", "list-style-type:none; display: flex")

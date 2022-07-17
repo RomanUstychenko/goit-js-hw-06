@@ -8,17 +8,14 @@ const ingredients = [
 ];
 
 const list = document.querySelector('#ingredients')
-
-const creatLi = (count) => {
-  for (let i = 0; i < count; i += 1 ) {
-    const li = document.createElement("li");
-    li.textContent = `${i}`;
-    list.append(li);
-  }
-}
-creatLi (ingredients.length)
-
-const markup = ingredients
-  .map((ingredient) => `<li class="item">${ingredient}</li>`)
-  .join("");
-  list.innerHTML = markup;
+  const ingredientsMaker = array => {
+    return array.map(ingredient => {
+      const liEl = document.createElement('li');
+      liEl.classList.add('item');
+      liEl.textContent = ingredient;
+      return liEl;
+    });
+  };
+const elements = ingredientsMaker(ingredients);
+list.append(...elements);
+console.log(list);

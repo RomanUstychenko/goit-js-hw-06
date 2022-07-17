@@ -7,8 +7,10 @@ function handleSubmit(event) {
     elements: { email, password }
   } = event.currentTarget;
 
-  if (email.value === "" || password.value === "") {
-    alert ("Всі поля повинні бути заповнені!");
+  if (email.value === "" || 
+  password.value === "" || 
+  password.value.indexOf(' ') > -1) {
+    alert ("Всі поля повинні бути заповнені без пробілів!");
     return;
   }
 
